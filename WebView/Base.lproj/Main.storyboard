@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,57 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WebView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXf-LR-7cl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uGt-8j-QHw">
+                                        <rect key="frame" x="67" y="269" width="240" height="154"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </webView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQc-ux-2me">
+                                        <rect key="frame" x="67" y="256" width="240" height="154"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonWebLink:" destination="BYZ-38-t0r" eventType="touchUpInside" id="91N-6z-nzG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="TQc-ux-2me" firstAttribute="width" secondItem="uGt-8j-QHw" secondAttribute="width" id="VQW-oT-dGz"/>
+                                    <constraint firstItem="uGt-8j-QHw" firstAttribute="leading" secondItem="wXf-LR-7cl" secondAttribute="leading" constant="67" id="hTB-ch-dOu"/>
+                                    <constraint firstItem="TQc-ux-2me" firstAttribute="height" secondItem="uGt-8j-QHw" secondAttribute="height" id="i17-6d-VzP"/>
+                                    <constraint firstAttribute="trailing" secondItem="uGt-8j-QHw" secondAttribute="trailing" constant="68" id="n1p-RM-M1v"/>
+                                    <constraint firstItem="TQc-ux-2me" firstAttribute="centerX" secondItem="uGt-8j-QHw" secondAttribute="centerX" id="raD-Kw-8U3"/>
+                                    <constraint firstAttribute="bottom" secondItem="uGt-8j-QHw" secondAttribute="bottom" constant="244" id="x40-w9-LvC"/>
+                                    <constraint firstItem="uGt-8j-QHw" firstAttribute="top" secondItem="wXf-LR-7cl" secondAttribute="top" constant="269" id="yAl-yq-ayO"/>
+                                    <constraint firstItem="TQc-ux-2me" firstAttribute="centerY" secondItem="wXf-LR-7cl" secondAttribute="centerY" id="z2J-jq-A2D"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wXf-LR-7cl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="24m-bN-6ax"/>
+                            <constraint firstItem="wXf-LR-7cl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="KDR-9k-bBg"/>
+                            <constraint firstItem="wXf-LR-7cl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sSI-j2-f2V"/>
+                            <constraint firstItem="wXf-LR-7cl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="uDZ-iA-DLv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="uGt-8j-QHw" id="rGx-uK-39O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="140" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

@@ -13,6 +13,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let url = NSURL (string:  "https://www.google.com")
+        let request = NSURLRequest (url:  url! as URL)
+        
+        self.webView.loadRequest (request as URLRequest)
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +24,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBOutlet weak var webView:  UIWebView!
+    
+    @IBAction func buttonWebLink(_ sender: UIButton)
+    {
+        if let url = NSURL (string:  "https://www.google.com")
+        {
+            UIApplication.shared.openURL (url as URL)
+        }
+    }
 }
 
